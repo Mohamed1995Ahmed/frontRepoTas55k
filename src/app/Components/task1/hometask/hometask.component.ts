@@ -93,8 +93,8 @@ export class HometaskComponent {
       title:task.title,
       description:task.description,
       dueDate:formattedDate,
-      status:task.description,
-      priorityLevel:task.description,
+      status:task.status,
+      priorityLevel:task.priorityLevel,
 
 
     })
