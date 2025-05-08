@@ -1,0 +1,44 @@
+<div class="task-card p-4 bg-white rounded shadow-sm">
+    <!-- Task ID -->
+    <div class="mb-3">
+      <h2 class="task-title fs-4 text-muted">Task ID</h2>
+      <p class="fs-5 text-dark">{{ task.id }}</p>
+    </div>
+  
+    <!-- Task Title -->
+    <div class="mb-3">
+      <h2 class="task-title fs-4 text-muted">Title</h2>
+      <p class="fs-5 text-dark">{{ task.title }}</p>
+    </div>
+  
+    <!-- Due Date -->
+    <div class="mb-3">
+      <h2 class="task-title fs-4 text-muted">Due Date</h2>
+      <p class="fs-5 text-dark">{{ task.dueDate | date: 'shortDate' }}</p>
+    </div>
+  
+    <!-- Task Status -->
+    <div class="mb-3">
+        <h2 class="task-title fs-4 text-muted">Status</h2>
+        <p class="fs-5 text-dark" [ngClass]="{
+          'text-success': task.status === Status.Completed,
+          'text-warning': task.status === Status.InProgress,
+          'text-danger': task.status === Status.New
+        }">
+          {{ getStatusKey(task.status) }}
+        </p>
+      </div>
+      
+  
+    <!-- Priority Level -->
+    <div class="mb-3">
+      <h2 class="task-title fs-4 text-muted">Priority Level</h2>
+        {{ getPriorityKey(task.priorityLevel) }}
+        <p class="fs-5 text-dark" [ngClass]="{
+            'text-success': task.priorityLevel === PriorityLevel.Low,
+            'text-warning':  task.priorityLevel === PriorityLevel.Medium,
+            'text-danger':  task.priorityLevel === PriorityLevel.High
+          }">
+    </div>
+  </div>
+  

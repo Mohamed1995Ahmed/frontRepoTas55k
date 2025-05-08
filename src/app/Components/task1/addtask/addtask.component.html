@@ -1,0 +1,64 @@
+<form [formGroup]="formadd" (ngSubmit)="onsubmit()" class="p-4 bg-white rounded shadow-sm">
+    <!-- Title Field -->
+    <div class="mb-4">
+      <label for="title" class="form-label fs-5 text-muted">Title</label>
+      <input id="title" formControlName="title" class="form-control form-control-lg shadow-sm" placeholder="Enter task title" />
+      <div *ngIf="formadd.get('title')?.touched && formadd.get('title')?.invalid" class="text-danger fs-6">
+        Title is required.
+      </div>
+    </div>
+  
+    <!-- Description Field -->
+    <div class="mb-4">
+      <label for="description" class="form-label fs-5 text-muted">Description</label>
+      <input id="description" formControlName="description" class="form-control form-control-lg shadow-sm" placeholder="Enter task description" />
+      <div *ngIf="formadd.get('description')?.touched && formadd.get('description')?.invalid" class="text-danger fs-6">
+        Description is required.
+      </div>
+    </div>
+  
+    <!-- Due Date Field -->
+    <div class="mb-4">
+      <label for="dueDate" class="form-label fs-5 text-muted">Due Date</label>
+      <input id="dueDate" formControlName="dueDate" type="date" class="form-control form-control-lg shadow-sm" />
+      <div *ngIf="formadd.get('dueDate')?.touched && formadd.get('dueDate')?.invalid" class="text-danger fs-6">
+        Due date is required.
+      </div>
+    </div>
+  
+    <!-- Status Field -->
+    <div class="mb-4">
+      <label for="status" class="form-label fs-5 text-muted">Status</label>
+      <select id="status" formControlName="status" class="form-select form-select-lg shadow-sm">
+        <option [ngValue]="null">All Status</option>
+        <ng-container *ngFor="let s of statusKeys">
+          <option [ngValue]="s">{{ Task1Status[s] }}</option>
+        </ng-container>
+      </select>
+      <div *ngIf="formadd.get('status')?.touched && formadd.get('status')?.invalid" class="text-danger fs-6">
+        Status is required.
+      </div>
+    </div>
+  
+    <!-- Priority Level Field -->
+    <div class="mb-4">
+      <label for="priorityLevel" class="form-label fs-5 text-muted">Priority Level</label>
+      <select id="priorityLevel" formControlName="priorityLevel" class="form-select form-select-lg shadow-sm">
+        <option [ngValue]="null">All Priority Levels</option>
+        <ng-container *ngFor="let p of priortyKeys">
+          <option [ngValue]="p">{{ PriorityLevel[p] }}</option>
+        </ng-container>
+      </select>
+      <div *ngIf="formadd.get('priorityLevel')?.touched && formadd.get('priorityLevel')?.invalid" class="text-danger fs-6">
+        Priority level is required.
+      </div>
+    </div>
+  
+    <!-- Submit Button -->
+    <div class="mt-4">
+      <button type="submit" [disabled]="formadd.invalid" class="btn btn-lg btn-primary w-100 shadow-sm">
+        Submit
+      </button>
+    </div>
+  </form>
+  

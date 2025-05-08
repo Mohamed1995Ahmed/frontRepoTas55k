@@ -1,8 +1,11 @@
+import { PriorityLevel } from "../Enum/priority-level";
+import { Status } from "../Enum/status";
+
 export interface Displaytask {
     id: number;
     title: string;
     description: string;
-    dueDate: string;         // ISO string format
-    status: 'New' | 'InProgress' | 'Completed' | 'Archived';
-    priorityLevel: 'Low' | 'Medium' | 'High';
+    dueDate: string;        
+    status: Status;
+    priorityLevel: PriorityLevel;
 }

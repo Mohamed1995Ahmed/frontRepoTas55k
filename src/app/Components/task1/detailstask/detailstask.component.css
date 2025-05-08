@@ -1,0 +1,33 @@
+.task-card {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .task-title {
+    font-weight: 600;
+  }
+  
+  .fs-5 {
+    font-size: 1.125rem;
+  }
+  
+  .text-dark {
+    color: #333;
+  }
+  
+  .text-muted {
+    color: #6c757d;
+  }
+  
+  .text-success {
+    color: #28a745;
+  }
+  
+  .text-warning {
+    color: #ffc107;
+  }
+  
+  .text-danger {
+    color: #dc3545;
+  }
+  
