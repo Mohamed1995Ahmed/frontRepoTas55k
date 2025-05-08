@@ -75,8 +75,8 @@
                     <div class="col-md-2">
                       <select class="form-select" formControlName="priorityLevel">
                         <option [ngValue]="null" disabled>Select Priority</option>
-                        @for (pri of priortykeys; track pri) {
-                          <option [ngValue]="pri">{{ PriorityLevel[pri] }}</option>
+                        @for (priority of priortykeys; track priority) {
+                          <option [ngValue]="priority">{{ PriorityLevel[priority] }}</option>
                         }
                       </select>
                     </div>
